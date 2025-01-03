@@ -18,7 +18,7 @@ std::cout << days << std::endl;
 std::cout << grade << std::endl;
 std::cout << name << std::endl; 
 
-std::cout << "Hello " << name <<std::endl;
+std::cout << "Hello " << name << std::endl;
 std::cout << "You are " << age << " years old." <<std::endl;
 
     return  0;
