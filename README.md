@@ -1,1 +1,1 @@
-# 6_Hrs_of_CPP
+6 Hour C++ Course
