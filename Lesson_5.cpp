@@ -11,10 +11,13 @@ namespace second {
 
 int main() {
 
+    using namespace std; // Using this allows you to omit std
 
-    std::cout << first::x << "\n";
+    cout << first::x << "\n";
     // std::cout << second::x;
+    string name = "Bro";
 
+    cout << "Hello " << name << endl;
 
     return 0;
 }
