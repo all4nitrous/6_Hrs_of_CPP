@@ -12,20 +12,23 @@ int main() {
     int remainder = students % 3;
 
 
+/* Possible variables
 
-    // students = students + 1;
+    students = students + 1;
 
-    // students += 1; // Can do multiple increments
+    students += 1; // Can do multiple increments
 
-    // students++; // single increment
+    students++; // single increment
 
-    // students--;
+    students--;
 
-    // students -=2;
+    students -=2;
 
-    // students *=2;
+    students *=2;
 
-    // students /= 2;
+    students /= 2;
+
+*/
 
     learners /= 3;
 
