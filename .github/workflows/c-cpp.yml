@@ -17,22 +17,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Set up C++ compiler and dependencies
+      # Step 2: Set up C++ compiler
       - name: Set up C++ compiler
-        run: sudo apt-get update && sudo apt-get install -y build-essential cmake
+        run: sudo apt-get update && sudo apt-get install -y build-essential
 
-      # Step 3: Build the C++ project
-      - name: Build the project
+      # Step 3: Compile all C++ files
+      - name: Compile C++ files
         run: |
-          mkdir build
-          cd build
-          cmake ..
-          make
+          for file in *.cpp; do
+            executable="${file%.cpp}"
+            g++ -o "$executable" "$file" || exit 1
+          done
 
-      # Step 4: Run tests
+      # Step 4: Run the executables
       - name: Run tests
         run: |
-          cd build
-          ctest --output-on-failure
-
-
+          for executable in $(ls | grep -v '\.cpp$'); do
+            echo "Running $executable..."
+            ./"$executable" || exit 1
+          done
