@@ -21,18 +21,22 @@ jobs:
       - name: Set up C++ compiler
         run: sudo apt-get update && sudo apt-get install -y build-essential
 
-      # Step 3: Compile all C++ files
-      - name: Compile C++ files
+      # Step 3: Compile only files with a main function
+      - name: Compile C++ files with main function
         run: |
           for file in *.cpp; do
-            executable="${file%.cpp}"
-            g++ -o "$executable" "$file" || exit 1
+            if grep -q "int main" "$file"; then
+              executable="${file%.cpp}"
+              echo "Compiling $file to $executable..."
+              g++ -o "$executable" "$file" || exit 1
+            fi
           done
 
       # Step 4: Run the executables
-      - name: Run tests
+      - name: Run the executables
         run: |
           for executable in $(ls | grep -v '\.cpp$'); do
             echo "Running $executable..."
             ./"$executable" || exit 1
           done
+
