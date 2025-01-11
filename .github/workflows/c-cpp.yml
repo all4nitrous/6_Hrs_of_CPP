@@ -1,0 +1,30 @@
+name: Build and Test All Lessons
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up a C compiler
+      - name: Set up C compiler
+        run: sudo apt-get update && sudo apt-get install -y build-essential
+          
+         
+            
+            # Run the compiled test executable
+            echo "Running $executable..."
+            ./$executable || exit 1
+          done
+
