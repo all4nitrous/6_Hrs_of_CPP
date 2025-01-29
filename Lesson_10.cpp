@@ -1,3 +1,5 @@
+/* Hypotenuse Calculator Program */
+
 #include <iostream>
 #include <cmath>
 
@@ -15,9 +17,11 @@ int main() {
     cout << "Enter side B: " << endl;
     cin >> b;
 
-    a = pow(a, 2);
-    b = pow(b, 2);
-    c = sqrt(a + b);
+    // a = pow(a, 2);
+    // b = pow(b, 2);
+    // c = sqrt(a + b);
+
+    c = sqrt(pow(a, 2) + pow(b, 2));
 
     cout << "Side C: " << c << endl;
 
