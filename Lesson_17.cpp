@@ -10,7 +10,13 @@ int main() {
     cout << "Enter your name: " << endl;
     getline(cin, name);
 
-    cout << name.at(0) << endl;
+    //name.insert(0, "@");
+
+    name.erase(0, 3);
+    cout << name << endl;
+
+
+    // cout << name.at(0) << endl;
    
     // name.append("@gmail.com");
     
