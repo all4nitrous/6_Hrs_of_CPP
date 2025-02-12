@@ -7,20 +7,26 @@ using std::cin;
 using std::endl;
 using std::string;
 
+void swap(string &x, string &y)
+
 int main()
 {
     string x = "Kool-Aid";
     string y = "Water";
     string temp;
 
-    temp = x;
-    x = y;
-    y = temp;
+    swap(x, y);
 
     cout << "X: " << x << endl;
     cout << "Y: " << y << endl;
     
-    
-
     return 0;
+}
+
+void swap(string &x, string &y)
+{
+    string temp;
+    temp = x;
+    x = y;
+    y = temp;
 }
