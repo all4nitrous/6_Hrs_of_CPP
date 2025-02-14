@@ -7,7 +7,7 @@ using std::cin;
 using std::endl;
 using std::string;
 
-void swap(string &x, string &y)
+void swap(string &x, string &y);
 
 int main()
 {
