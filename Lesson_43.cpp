@@ -3,9 +3,10 @@
 
 using std::cout;
 using std::cin;
-using std::end;
+using std::endl;
 using std::string;
-void printInfo(const string name, const int age)
+
+void printInfo(const string name, const int age);
 
 int main()
 {
@@ -19,8 +20,6 @@ int main()
 
 void printInfo(const string name, const int age)
 {
-    name = " ";
-    age = 0;
     cout << name << endl;
     cout << age << endl;
 }
